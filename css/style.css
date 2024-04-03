@@ -1,0 +1,618 @@
+:root {
+    --primary: #000;
+    --secondary: #868686;
+    --text_diskon: #FF0000;
+    --background_color: #fff;
+    --background_diskon: #FFC0C0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background_color);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6%;
+    background-color: var(--background_color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar.scroll {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar .navbar-logo img {
+    width: 8rem;
+}
+
+.navbar .navbar-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar .navbar-nav a {
+    color: var(--primary);
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 1.5rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--secondary);
+}
+
+.navbar #hamburger-menu {
+    display: none;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background);
+    min-height: 100vh;
+    padding: 4rem 6%;
+    padding-top: 12rem;
+}
+
+.hero .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.hero .content h1 {
+    color: var(--primary);
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+.hero .content p{
+    color: var(--primary);
+    font-size: 1.7rem;
+    padding-bottom: 5rem;
+    font-weight: 300;
+    line-height: 2;
+}
+
+.hero .content .tablet-view {
+    display: none;
+}
+
+.hero .content a {
+    color: var(--background_color);
+    font-size: 2rem;
+    font-weight: 500;
+    background-color: var(--primary);
+    padding: 1.2rem 6rem;
+    border-radius: 0.5rem;
+}
+
+.hero .content a:hover,
+.produk-kami .content .keterangan a:hover {
+    color: var(--primary);
+    background-color: var(--background_color);
+    border: 3px solid var(--primary);
+    font-weight: 500;
+}
+
+.hero .image {
+    width: 40%;
+    text-align: right;
+}
+
+.hero .image img {
+    width: 80%;
+}
+
+/* Tentang Kami */
+.tentang-kami,
+.produk-kami,
+.keunggulan-produk-kami {
+    padding: 5rem 6% 4rem;
+}
+
+.tentang-kami .judul,
+.produk-kami .judul,
+.keunggulan-produk-kami .judul {
+    text-align: center;
+    margin-bottom: 7rem;
+}
+
+.tentang-kami .judul h2,
+.produk-kami .judul h2,
+.keunggulan-produk-kami .judul h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.tentang-kami .judul hr,
+.produk-kami .judul hr,
+.keunggulan-produk-kami .judul hr {
+    margin: auto;
+    border: none;
+    width: 60%;
+    border-top: 2px solid var(--primary);
+}
+
+.tentang-kami .content,
+.produk-kami .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 5rem;
+}
+
+.tentang-kami .content .image,
+.produk-kami .content .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--primary);
+    height: 40rem;
+    border-radius: 0.5rem;
+}
+
+.tentang-kami .content .image img,
+.produk-kami .content .image img {
+    width: auto;
+    height: 65%;
+}
+
+.tentang-kami .content .keterangan {
+    display: block;
+}
+
+.tentang-kami .content .keterangan p{
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 2;
+    padding-bottom: 2rem;
+}
+
+/* Produk */
+.produk-kami .content .image {
+    background-color: var(--background_color);
+}
+
+.produk-kami .content .keterangan h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding-bottom: 2rem;
+}
+
+.produk-kami .content .keterangan p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding-bottom: 2rem;
+    line-height: 2;
+}
+
+.produk-kami .content .keterangan .price{
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding-bottom: 2rem;
+}
+
+.produk-kami .content .keterangan .diskon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+    padding-bottom: 2rem;
+}
+
+.produk-kami .content .keterangan .diskon h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #9A9A9A;
+    text-decoration: line-through;
+}
+
+.produk-kami .content .keterangan .diskon h4 {
+    font-size: 1.2rem;
+    display: inline-block;
+    background-color: var(--background_diskon);
+    padding: 1rem 1.5rem;
+    color: var(--text_diskon);
+    border-radius: 0.5rem;
+}
+
+.produk-kami .content .keterangan a {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--background_color);
+    padding: 1.5rem 5rem;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* Keunggulan Produk */
+.keunggulan-produk-kami .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    padding: 0 6rem;
+}
+
+.keunggulan-produk-kami .content .card {
+    display: block;
+    background-color: var(--background_benefits);
+    padding: 3rem;
+    border: 1px solid var(--primary);
+    border-radius: 0.5rem;
+}
+
+.keunggulan-produk-kami .content .card img {
+    height: 12rem;
+    padding-bottom: 2rem;
+}
+
+.keunggulan-produk-kami .content .card .keterangan h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 1.2rem;
+}
+
+.keunggulan-produk-kami .content .card .keterangan p {
+    font-size: 1.3rem;
+    line-height: 2;
+    font-weight: 300;
+}
+
+/* Footer */
+footer {
+    border-top: 2px solid var(--primary);
+    width: 100%;
+    color: var(--primary);
+    margin-top: 5rem;
+    padding: 2rem 6% ;
+    text-align: left;
+    background-color: var(--background);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 5rem;
+}
+
+footer .container .description {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .container .description.pt {
+    padding-top: 0.5rem;
+}
+
+footer .container .description .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.3rem;
+    padding-bottom: 1.5rem;
+}
+
+footer .container .description .logo img {
+    width: 6rem;
+}
+
+footer .container .description h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+footer .container .description p,
+footer .container .description.menu a {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2;
+    color: var(--primary);
+}
+
+footer .container .description.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer .container .description.menu a {
+    padding-bottom: 2rem;
+}
+
+footer .container .description.pt {
+    padding-left: 25%;
+}
+
+footer .container .description.menu.pt {
+    padding-left: 35%;
+}
+
+footer .container .description.pt .socials a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+footer .container .description.pt .socials img {
+    height: 3rem;
+}
+
+footer .container .description.pt .socials p {
+    font-weight: 400;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+footer .container .description.menu a:hover,
+footer .container .description.pt .socials p:hover {
+    color: var(--secondary);
+}
+
+/* Copyright */
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding-top: 1.2rem;
+    color: var(--background_color);
+    background-color: var(--primary);
+    height: 6rem;
+    font-size: 2rem;
+}
+
+/* Media Querries */
+@media (max-width: 1669px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 1654px) {
+    footer .container .description.pt {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 1600px) {
+    html {
+        font-size: 85%;
+    }
+
+    footer .container .description.pt {
+        padding-left: 25%;
+    }
+}
+
+@media (max-width: 1500px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 1563px) {
+    footer .container {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+}
+
+@media (max-width: 1400px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media (max-width: 1350px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media (max-width: 1270px) {
+    html {
+        font-size: 65%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar .navbar-logo a {
+        font-size: 3rem;
+    }
+
+    .navbar #hamburger-menu {
+        color: var(--primary);
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: var(--background_color);
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: var(--primary);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 3rem;
+    } 
+
+    .hero {
+        min-height: 95vh;
+        padding-bottom: 0;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .hero .desktop-view {
+        display: none;
+    }
+
+    .hero .content .tablet-view {
+        padding-top: 4rem;
+        display: inline-block;
+        width: 60%;
+    }
+
+    .hero .content {
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    .hero .content p {
+        padding-bottom: 1rem;
+    }
+    
+    .hero .content p br {
+        display: none;
+    }
+
+    .hero .content img {
+        padding-bottom: 5rem;
+    }
+
+    .hero .content a {
+        width: 70%;
+        padding: 2rem 0;
+        height: 7rem;
+    }
+
+    .keunggulan-produk-kami .content {
+        padding: 0;
+    }
+
+    footer .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer .container .description.menu {
+        padding: 0;
+        justify-self: center;
+    }
+
+    footer .container .description.pt {
+        padding: 0;
+    }
+}
+
+@media (max-width: 990px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 863px) {
+    .produk-kami .content .keterangan a {
+        text-align: center;
+        width: 100%;
+    }
+
+    .produk-kami .content .image img {
+        width: 45%;
+    }
+
+    .tentang-kami .content,
+    .produk-kami .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 668px) {
+    html {
+        font-size: 50%;
+    }
+
+    footer .container {
+        grid-template-columns: 1fr;
+    }
+
+    footer .container .description {
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .container .description.menu.pt {
+        padding-left: 0;
+        align-items: center;
+    }
+
+    footer .container .description.pt .socials img {
+        height: 4rem;
+    }
+
+    footer .container .description .logo img {
+        width: 15rem;
+    }
+
+    footer .container .description h2 {
+        font-size: 3rem;
+    }
+
+    footer .container .description p, 
+    footer .container .description.menu a,
+    footer .container .description.pt .socials p {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 625px) {
+    .keunggulan-produk-kami .judul hr {
+        width: 100%;
+    }
+} 
+
